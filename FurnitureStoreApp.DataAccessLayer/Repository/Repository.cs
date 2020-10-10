@@ -20,9 +20,40 @@ namespace FurnitureStoreApp.DataAccessLayer.Repository
         {
             dbSet = dataContext.Set<T>();
         }
+
+        public void Delete(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(ICollection<T> obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<T> GetAll()
         {
             return dbSet.ToList();
+        }
+
+        public T GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(ICollection<T> obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(T obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(T obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
