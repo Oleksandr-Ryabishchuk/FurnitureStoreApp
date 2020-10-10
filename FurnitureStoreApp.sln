@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureStoreApp", "FurnitureStoreApp\FurnitureStoreApp.csproj", "{FCD9BC44-6CE5-4643-8C18-A87DC668703F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureStoreApp.BusinessLayer", "FurnitureStoreApp.BusinessLayer\FurnitureStoreApp.BusinessLayer.csproj", "{8E598976-0754-48F6-BE7D-CF11B2B3062A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureStoreApp.DataAccessLayer", "FurnitureStoreApp.DataAccessLayer\FurnitureStoreApp.DataAccessLayer.csproj", "{98B372A0-7794-429F-948D-ED1108829294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureStoreApp.UnitTests", "FurnitureStoreApp.UnitTests\FurnitureStoreApp.UnitTests.csproj", "{3D6F35FE-9421-48F3-8C4E-C91F75820213}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{FCD9BC44-6CE5-4643-8C18-A87DC668703F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCD9BC44-6CE5-4643-8C18-A87DC668703F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCD9BC44-6CE5-4643-8C18-A87DC668703F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E598976-0754-48F6-BE7D-CF11B2B3062A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E598976-0754-48F6-BE7D-CF11B2B3062A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E598976-0754-48F6-BE7D-CF11B2B3062A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E598976-0754-48F6-BE7D-CF11B2B3062A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B372A0-7794-429F-948D-ED1108829294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B372A0-7794-429F-948D-ED1108829294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B372A0-7794-429F-948D-ED1108829294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B372A0-7794-429F-948D-ED1108829294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6F35FE-9421-48F3-8C4E-C91F75820213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6F35FE-9421-48F3-8C4E-C91F75820213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6F35FE-9421-48F3-8C4E-C91F75820213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6F35FE-9421-48F3-8C4E-C91F75820213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
