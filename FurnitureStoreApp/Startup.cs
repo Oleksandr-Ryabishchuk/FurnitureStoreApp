@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FurnitureStoreApp.DataAccessLayer.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace FurnitureStoreApp
 {
@@ -26,6 +28,9 @@ namespace FurnitureStoreApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<DataContext>(options => options.UseSqlServer
+            (Configuration.GetConnectionString("DefaultConnection"), 
+            b => b.MigrationsAssembly("FurnitureStoreApp.DataAccessLayer")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
