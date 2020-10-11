@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FurnitureStoreApp.DataAccessLayer.Repository
 {
     public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAll();
 
-        T GetById(int id);
+        Task<T> GetById(Guid id);
 
-        void Insert(ICollection<T> obj);
+        Task Insert(T entity);
 
-        void Insert(T obj);
+        void Update(T entity);
 
-        void Update(T obj);
+        Task Delete(Guid Id);
 
-        void Delete(int Id);
-
-        void Delete(ICollection<T> obj);
+        //Task DeleteAll();
     }
 }

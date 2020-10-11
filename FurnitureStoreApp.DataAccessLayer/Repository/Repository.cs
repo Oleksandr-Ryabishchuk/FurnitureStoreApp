@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace FurnitureStoreApp.DataAccessLayer.Repository
 {
@@ -19,41 +20,36 @@ namespace FurnitureStoreApp.DataAccessLayer.Repository
         public Repository(DbContext dataContext)
         {
             dbSet = dataContext.Set<T>();
+        }       
+
+        public virtual async Task<IEnumerable<T>> GetAll()
+        {
+            return await dbSet.ToListAsync();
         }
 
-        public void Delete(int Id)
+        public virtual async Task<T> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return await dbSet.FindAsync(id);
+        }       
+
+        public virtual async Task Insert(T entity)
+        {
+            await dbSet.AddAsync(entity);
         }
 
-        public void Delete(ICollection<T> obj)
+        public virtual void Update(T entity)
         {
-            throw new NotImplementedException();
+            dbSet.Update(entity);
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual async Task Delete(Guid id)
         {
-            return dbSet.ToList();
+             dbSet.Remove(await GetById(id));
         }
 
-        public T GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(ICollection<T> obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(T obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(T obj)
-        {
-            throw new NotImplementedException();
-        }
+        //public virtual async Task DeleteAll()
+        //{
+        //    dbSet.RemoveRange(await GetAll());
+        //}
     }
 }

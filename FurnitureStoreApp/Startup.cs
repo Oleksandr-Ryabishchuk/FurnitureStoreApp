@@ -12,6 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using FurnitureStoreApp.DataAccessLayer.UnitOfWork;
+using FurnitureStoreApp.DataAccessLayer.Repository;
+using FurnitureStoreApp.BusinessLayer.Interfaces;
+using FurnitureStoreApp.BusinessLayer.Managers;
+using AutoMapper;
 
 namespace FurnitureStoreApp
 {
@@ -28,9 +33,16 @@ namespace FurnitureStoreApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
             services.AddDbContext<DataContext>(options => options.UseSqlServer
             (Configuration.GetConnectionString("DefaultConnection"), 
             b => b.MigrationsAssembly("FurnitureStoreApp.DataAccessLayer")));
+
+            services.AddAutoMapper(typeof(Administrator).Assembly);
+            
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+           
+            services.AddTransient<IAdministrator, Administrator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

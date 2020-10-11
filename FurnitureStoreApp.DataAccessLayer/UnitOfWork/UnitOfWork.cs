@@ -9,7 +9,7 @@ namespace FurnitureStoreApp.DataAccessLayer.UnitOfWork
 {
     public class UnitOfWork: IUnitOfWork
     {
-        //private bool disposed;
+        private bool disposed;
         private readonly DataContext _dataContext;
         private readonly Dictionary<Type, object> repositories;
         public UnitOfWork(DataContext dataContext)
@@ -18,14 +18,31 @@ namespace FurnitureStoreApp.DataAccessLayer.UnitOfWork
             repositories = new Dictionary<Type, object>();
         }
 
-        public void Dispose()
+        public async void Dispose()
         {
-            throw new NotImplementedException();
+            await Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual async Task Dispose(bool disposing)
+        {
+            if (!disposed)
+                return;
+            if (disposing)
+            {
+                await _dataContext.DisposeAsync();
+            }
+            disposed = true;            
         }
 
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
         {
-            throw new NotImplementedException();
+            if (repositories.ContainsKey(typeof(TEntity)))
+                return repositories[typeof(TEntity)] as IRepository<TEntity>;
+
+            var repository = new Repository<TEntity>(_dataContext);
+            repositories.Add(typeof(TEntity), repository);
+            return repository;
         }
 
         public async Task SaveAsync()
