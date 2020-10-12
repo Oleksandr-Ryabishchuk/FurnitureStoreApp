@@ -18,7 +18,7 @@ namespace FurnitureStoreApp.DataAccessLayer.DTOs
 
         public int Width { get; set; }
 
-        public int Lenth { get; set; }
+        public int Length { get; set; }
 
         public int Height { get; set; }
     }

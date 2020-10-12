@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FurnitureStoreApp.UnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class CRUDTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CanGetAllFurnitures()
         {
         }
     }

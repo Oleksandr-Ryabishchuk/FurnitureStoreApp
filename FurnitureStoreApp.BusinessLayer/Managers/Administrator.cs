@@ -31,7 +31,7 @@ namespace FurnitureStoreApp.BusinessLayer.Managers
                 InStock = dto.InStock,
                 Price = dto.Price,
                 IsUnique = dto.IsUnique,
-                Lenth = dto.Lenth,
+                Length = dto.Length,
                 Width = dto.Width,
                 Height = dto.Height
             };
@@ -73,7 +73,7 @@ namespace FurnitureStoreApp.BusinessLayer.Managers
             furnitureToUpdate.InStock = dto.InStock;
             furnitureToUpdate.Price = dto.Price;
             furnitureToUpdate.IsUnique = dto.IsUnique;
-            furnitureToUpdate.Lenth = dto.Lenth;
+            furnitureToUpdate.Length = dto.Length;
             furnitureToUpdate.Width = dto.Width;
             furnitureToUpdate.Height = dto.Height;           
 

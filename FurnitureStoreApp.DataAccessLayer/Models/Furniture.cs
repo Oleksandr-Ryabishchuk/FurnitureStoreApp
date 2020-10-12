@@ -11,7 +11,7 @@ namespace FurnitureStoreApp.DataAccessLayer.Models
         [Required]
         public int Width { get; set; }
         [Required]
-        public int Lenth { get; set; }
+        public int Length { get; set; }
         [Required]
         public int Height { get; set; }
     }
